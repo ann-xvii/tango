@@ -57,7 +57,7 @@ ROOT_URLCONF = 'tango_with_django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -97,8 +97,17 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+TEST_RUNNER = 'rainbowtests.test.runner.RainbowDiscoverRunner'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+print MEDIA_ROOT

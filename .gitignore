@@ -2,6 +2,7 @@
 __pycache__
 db.sqlite3
 /static
+/media
 .DS_Store
 .idea
 tango_with_django_project/secret.py
