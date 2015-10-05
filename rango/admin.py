@@ -6,8 +6,9 @@ class PagesInline(admin.TabularInline):
     model = Page
 
 
-@admin.register(Category)
+#@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name', )}
 
     list_display = ("name", )
 
@@ -22,3 +23,4 @@ class PageAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Page, PageAdmin)
+admin.site.register(Category, CategoryAdmin)
