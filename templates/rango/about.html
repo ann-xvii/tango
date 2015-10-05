@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Rango says...</h1>
+<p>Hello again, world! This is the about page.  <strong>{{ boldmessage }}</strong></p>
+<img src="{% static 'images/rango_legend.jpg' %}" alt="Picture of Rango the Chameleon holding a fish">
+<br/>
+<a href="/">Home</a>
+</body>
+</html>
