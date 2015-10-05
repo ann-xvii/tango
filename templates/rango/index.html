@@ -1,5 +1,5 @@
-{% load static from staticfiles %}
 <!DOCTYPE html>
+{% load static from staticfiles %}
 <html>
 <head>
     <title>Rango</title>
@@ -9,13 +9,23 @@
     <h1>Rango says... hola mundo!!!</h1>
 
     {% if categories %}
+    <h3>Top 5 Categories!</h3>
     <ul>
         {% for category in categories %}
-        <li>{{ category.name }}</li>
+        <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
         {% endfor %}
     </ul>
     {% else %}
         <strong>There are no categories present.</strong>
+    {% endif %}
+
+    {% if pages %}
+    <h3>Top 5 Pages!</h3>
+    <ul>
+        {% for page in pages %}
+            <li><a href="/rango/">{{ page.title }} | {{ page.views }} views </a></li>
+        {% endfor %}
+    </ul>
     {% endif %}
 
     <a href="/rango/about/">About</a>
