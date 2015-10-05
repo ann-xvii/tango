@@ -1,0 +1,7 @@
+*.pyc
+__pycache__
+db.sqlite3
+/static
+.DS_Store
+.idea
+tango_with_django_project/secret.py
