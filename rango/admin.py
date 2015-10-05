@@ -17,6 +17,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class PageAdmin(admin.ModelAdmin):
+    list_display = ("category", "title", "url")
     model = Page
 
 
