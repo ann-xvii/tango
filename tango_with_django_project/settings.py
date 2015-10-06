@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rango'
+    'rango',
+    'registration',
 )
 
 # PASSWORD_HASHERS = (
@@ -118,4 +119,10 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_URL = '/rango/login/'
+
+REGISTRATION_OPEN = True                # If True, users can register
+ACCOUNT_ACTIVATION_DAYS = 7             # One week activation window.
+REGISTRATION_AUTO_LOGIN = True          # If True, the user will be automatically logged in
+LOGIN_REDIRECT_URL = '/rango/'          # the page users see after successful login
+LOGIN_URL = '/accounts/login/'          # page users are directed to when not logged in and trying to access pages
+                                        # requiring authentication

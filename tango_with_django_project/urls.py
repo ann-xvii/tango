@@ -21,7 +21,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^rango/', include('rango.urls', namespace='rango')),
-    url(r'^$', include('rango.urls', namespace='rango')),
+    url(r'^accounts/', include('registration.backends.simple.urls'))
 ]
 
 if not settings.DEBUG:
