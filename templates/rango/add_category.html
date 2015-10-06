@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-{% load static from staticfiles %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Rango</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Add Category{% endblock %}
+
+{% block content %}
 <h1>Add a Category</h1>
 
-<form action="/rango/add_category/" method="post" id="category_form">
+<form action="{% url 'rango:add_category' %}" method="post" id="category_form">
     {% csrf_token %}
     {% for hidden in form.hidden_fields %}
         {{ hidden }}
@@ -23,5 +21,4 @@
 
     <input type="submit" name="submit" value="Create Category" />
 </form>
-</body>
-</html>
+{% endblock %}

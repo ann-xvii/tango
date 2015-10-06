@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Restricted{% endblock %}
+
+{% block content %}
+<h3>Since you're logged in, you can see this text {{ user }}!</h3>
+{% endblock %}
