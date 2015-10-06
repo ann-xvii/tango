@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ category_name }}{% endblock %}
+{% block title %}Welcome to Rango!!!{% endblock %}
 
 {% block content%}
     {% if user.is_authenticated %}
@@ -9,7 +9,7 @@
         <h1>Rango says... hello world!!!</h1>
     {% endif %}
     {% if categories %}
-    <h3>Top 5 Categories!</h3>
+    <h3>Top Categories!</h3>
     <ul>
         {% for category in categories %}
         <li><a href="{% url 'rango:category' category.slug %}">{{ category.name }}</a></li>
