@@ -5,9 +5,9 @@
 {% block content%}
     <div class="jumbotron">
     {% if user.is_authenticated %}
-        <h1>Rango says... hello {{ user.username }}!!!</h1>
+        <h2>Rango says... hello {{ user.username }}!!!</h2>
     {% else %}
-        <h1>Rango says... hello world!!!</h1>
+        <h2>Rango says... hello world!!!</h2>
     {% endif %}
     </div>
 
@@ -15,7 +15,7 @@
     <div class="col-xs-12 col-sm-6 placeholder col-md-6">
         <div class="panel panel-info">
             <div class="panel-heading" style="text-align: center">
-                <h2 class="panel-title">Categories</h2>
+                <h2 class="panel-title"><a href="{% url 'rango:categories' %}">Categories</a></h2>
             </div>
         </div>
 

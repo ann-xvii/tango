@@ -5,9 +5,9 @@
 {% block title %}Add a Page{% endblock %}
 
 {% block content %}
-<h1>Add a new Page to the {{ category.name }} category</h1>
 <!--<form action="/rango/category/{{ category_name_slug }}/add_page/" method="post" id="page_form">-->
-<form action="{% url 'rango:add_page' category.slug %}" method="post" id="page_form">
+<form role="form" action="{% url 'rango:add_page' category.slug %}" method="post" id="page_form">
+    <h1 class="form-signin-heading">Add a Page to <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></h1>
     {% csrf_token %}
     {% for hidden in form.hidden_fields %}
         {{ hidden }}

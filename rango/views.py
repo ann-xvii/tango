@@ -11,8 +11,9 @@ from datetime import datetime
 def index(request):
     category_list = Category.objects.order_by('-views')[:5]
     page_list = Page.objects.order_by('-views')[:5]
+    all_categories = Category.objects.all()
 
-    context_dict = {'categories': category_list, 'pages': page_list}
+    context_dict = {'categories': category_list, 'pages': page_list, 'all_categories': all_categories}
 
     visits = request.session.get('visits')
     if not visits:
@@ -76,6 +77,13 @@ def category(request, category_name_slug):
         pass
 
     return render(request, 'rango/category.html', context_dict)
+
+
+@login_required
+def all_categories(request):
+    categories = Category.objects.all()
+    # categories = None
+    return render(request, 'rango/all_categories.html', {'categories': categories})
 
 
 @login_required

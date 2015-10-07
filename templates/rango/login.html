@@ -7,7 +7,7 @@
 {% block content %}
 <h1>Login to Rango</h1>
 
-<form action="/rango/login/" method="post" id="login_form">
+<form action="/accounts/login/" method="post" id="login_form">
     {% csrf_token %}
     Username: <input type="text" name="username"value="" size="50" />
     <br/>

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+<h2>All Categories</h2>
+
+
+<div class="row row-centered">
+    <div class="col-xs-6 col-centered">
+        {% if categories %}
+
+            {% for category in categories %}
+            <ul class="list-group">
+                <li class="list-group-item"><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
+            </ul>
+            {% endfor %}
+        {% else %}
+        <img src="{% static 'images/why_not_add_category.jpg' %}" alt="Y u no add an image!">
+        <p><a href="{% url 'rango:add_category' %}">Add a Category!</a></p>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

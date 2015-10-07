@@ -126,6 +126,4 @@ REGISTRATION_AUTO_LOGIN = True          # If True, the user will be automaticall
 LOGIN_REDIRECT_URL = '/rango/'          # the page users see after successful login
 LOGIN_URL = '/accounts/login/'          # page users are directed to when not logged in and trying to access pages
                                         # requiring authentication
-EMAIL_HOST = 'mail.example.com'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
+

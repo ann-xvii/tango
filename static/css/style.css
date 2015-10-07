@@ -1,0 +1,14 @@
+ul {
+    list-style-type: none;
+}
+
+a {
+    //color: green;
+}
+a:visited {
+    //color: green;
+}
+
+a:hover {
+    //color: #21847d;
+}
