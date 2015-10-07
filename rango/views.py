@@ -6,9 +6,10 @@ from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 
+
 # Create your views here.
 def index(request):
-    category_list = Category.objects.all()
+    category_list = Category.objects.order_by('-views')[:5]
     page_list = Page.objects.order_by('-views')[:5]
 
     context_dict = {'categories': category_list, 'pages': page_list}
@@ -76,6 +77,7 @@ def category(request, category_name_slug):
 
     return render(request, 'rango/category.html', context_dict)
 
+
 @login_required
 def add_category(request):
     # An HTTP Post?
@@ -99,6 +101,7 @@ def add_category(request):
     # Bad form (or form details), no form supplied...
     # Render the form with error messages (if any).
     return render(request, 'rango/add_category.html', {'form': form})
+
 
 @login_required
 def add_page(request, category_name_slug):
@@ -229,7 +232,7 @@ def restricted(request):
 
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
-#@login_required
+# @login_required
 # def user_logout(request):
 #     # Since we know the user is logged in, we can now just log them out.
 #     logout(request)

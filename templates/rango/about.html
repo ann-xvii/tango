@@ -5,11 +5,16 @@
 {% block title %}About{% endblock %}
 
 {% block content %}
-<h1>Rango says...</h1>
-<p>Hello again, world! This is the about page.  <strong>{{ boldmessage }}</strong></p>
+<div class="page-header">
+    <h1>Rango says...</h1>
+
+
+
+<p>Hello again, world! This is my about page.  <strong>{{ boldmessage }}</strong></p>
 <img src="{% static 'images/rango_legend.jpg' %}" alt="Picture of Rango the Chameleon holding a fish">
 <br/>
 {% if count %}
     You've been here {{ count }} times!
 {% endif %}
+    </div>
 {% endblock %}

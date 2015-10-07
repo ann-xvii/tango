@@ -3,29 +3,47 @@
 {% block title %}Welcome to Rango!!!{% endblock %}
 
 {% block content%}
+    <div class="jumbotron">
     {% if user.is_authenticated %}
         <h1>Rango says... hello {{ user.username }}!!!</h1>
     {% else %}
         <h1>Rango says... hello world!!!</h1>
     {% endif %}
-    {% if categories %}
-    <h3>Top Categories!</h3>
-    <ul>
-        {% for category in categories %}
-        <li><a href="{% url 'rango:category' category.slug %}">{{ category.name }}</a></li>
-        {% endfor %}
-    </ul>
-    {% else %}
-        <strong>There are no categories present.</strong>
-    {% endif %}
+    </div>
 
-    {% if pages %}
-    <h3>Top 5 Pages!</h3>
-    <ul>
-        {% for page in pages %}
-            <li><a href="{{ page.url }}" target="_blank">{{ page.title }} | {{ page.views }} views </a></li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+<div class="row">
+    <div class="col-xs-12 col-sm-6 placeholder col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading" style="text-align: center">
+                <h2 class="panel-title">Categories</h2>
+            </div>
+        </div>
 
+        {% if categories %}
+            <ul class="list-group">
+            {% for category in categories %}
+                <li class="list-group-item"><a href="{% url 'rango:category' category.slug %}">{{ category.name }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+                <strong>There are no categories present.</strong>
+        {% endif %}
+    </div>
+
+    <div class="col-xs-12 col-sm-6 placeholder col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading" style="text-align: center;">
+                <h2 class="panel-title">Pages</h2>
+            </div>
+        </div>
+        {% if pages %}
+            <ul class="list-group">
+            {% for page in pages %}
+                <li class="list-group-item"><a href="{{ page.url }}" target="_blank">{{ page.title }} | {{ page.views }}</a></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+<p>visits: {{ visits }}</p>
 {% endblock %}
