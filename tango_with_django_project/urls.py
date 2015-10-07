@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from registration.backends.simple.views import RegistrationView
-
+from rango import views
 
 # Create a new class that redirects the user to the index page, if successful at logging in
 class MyRegistrationView(RegistrationView):
@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^rango/', include('rango.urls', namespace='rango')),
     url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^$', views.index, name='index')
 
 ]
 
