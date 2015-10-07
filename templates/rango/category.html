@@ -6,6 +6,7 @@
 
 {% block content %}
     <h1>{{ category_name }}</h1>
+    <hr>
     {% if category %}
         {% if pages %}
         <ul>
@@ -21,6 +22,13 @@
     {% endif %}
 
     {% if category %}
-        <p><a href="{% url 'rango:add_page' category.slug %}">Add Page!</a></p>
+
+    <br/>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <p><a href="{% url 'rango:add_page' category.slug %}">Add a page</a> to {{ category_name }}, or head back to the <a href="{% url 'rango:index' %}">Index</a></p>
+        </div>
+    </div>
     {% endif %}
 {% endblock %}

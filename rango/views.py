@@ -46,6 +46,8 @@ def index(request):
 def about(request):
     if request.session.get('visits'):
         count = request.session.get('visits')
+    else:
+        count = 1
     context_dict = {'boldmessage': 'I was told to place a bolder message in the context dict.', 'count': count}
     return render(request, 'rango/about.html', context_dict)
 

@@ -5,7 +5,7 @@
 {% block title %}Categories{% endblock %}
 
 {% block content %}
-<h2>All Categories</h2>
+<h2>Categories</h2>
 
 
 <div class="row row-centered">
@@ -18,8 +18,10 @@
             </ul>
             {% endfor %}
         {% else %}
+        <h4>There are no categories! <a style="color: white;" href="{% url 'rango:add_category' %}"><button class="btn btn-info">Add One!</button></a></h4>
         <img src="{% static 'images/why_not_add_category.jpg' %}" alt="Y u no add an image!">
-        <p><a href="{% url 'rango:add_category' %}">Add a Category!</a></p>
+        <hr>
+        <p><a style="color: white;" href="{% url 'rango:add_category' %}"><button class="btn btn-default">Add Category</button></a></p>
         {% endif %}
     </div>
 </div>
