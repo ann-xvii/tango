@@ -1,5 +1,6 @@
 import json
-import urllib, urllib2
+import urllib
+import urllib2
 from keys import BING_API_KEY
 
 
