@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^restricted/', views.restricted, name='restricted'),
     url(r'^categories/$', views.all_categories, name='categories'),
     url(r'^search/$', views.search, name='search'),
+    url(r'^goto/$', views.track_url, name='goto'),
 ]
